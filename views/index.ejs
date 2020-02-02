@@ -1,0 +1,9 @@
+<h2 class="page-header">Recently Added</h2>
+<div>
+    <% if(locals.books != null) {%>
+    <% books.forEach(element => {%> 
+      <a href= "/books/<%= element.id %>">
+       <img src="<%= element.coverImagePath %>" height="250" width="200">  
+      </a>
+     <%});}  %> 
+    </div>
