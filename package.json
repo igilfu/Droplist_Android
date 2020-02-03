@@ -7,6 +7,12 @@
     "start": "node server.js",
     "devStart": "nodemon server.js"
   },
+  "engines": {
+    "node": "8.9.4",
+    "nodejs": "10.18.1",
+    "npm": "5.6.0",
+    "yarn": "1.x"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -25,4 +31,5 @@
     "dotenv": "^8.2.0",
     "nodemon": "^2.0.2"
   }
+
 }
