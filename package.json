@@ -8,8 +8,8 @@
     "devStart": "nodemon server.js"
   },
   "engines": {
-    "node": "8.9.4",
-    "nodejs": "10.18.1",
+    "node": "10.x",
+    "nodejs": "12.x",
     "npm": "6.13.7"
   },
   "keywords": [],
