@@ -47,7 +47,7 @@ port = 3000;
 DBname = 'gilad';
 
 const mongoose = require('mongoose');
-mongoose.connect(process.env.DATABASE_URL || `mongodb://localhost/${DBname}`, { useUnifiedTopology: true,
+mongoose.connect(process.env.MONGODB_URI  || `mongodb://localhost/${DBname}`, { useUnifiedTopology: true,
 useNewUrlParser: true }).then(() => {
     app.listen(process.env.PORT || port, () => console.log(`Running server on port ` + port))
 })
