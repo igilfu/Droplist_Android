@@ -43,8 +43,8 @@ app.use('/', indexRouter);
 app.use('/authors', authorRouter);
 app.use('/books', bookRouter);
 
-port = 3000
-DBname = 'gilad'
+port = 3000;
+DBname = 'gilad';
 
 const mongoose = require('mongoose');
 mongoose.connect(process.env.DATABASE_URL || `mongodb://localhost/${DBname}`, { useUnifiedTopology: true,
