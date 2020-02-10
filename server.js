@@ -48,7 +48,7 @@ DBname = "gilad";
 
 const mongoose = require("mongoose");
 mongoose
-  .connect(process.env.DATABASE_URL || `mongodb://localhost/${DBname}`, {
+  .connect(process.env.MONGODB_URI || `mongodb://localhost/${DBname}`, {
     useUnifiedTopology: true,
     useNewUrlParser: true
   })
