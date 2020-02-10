@@ -30,14 +30,10 @@ app.use(function(req, res, next) {
   next();
 });
 
-// const mongoose = require('mongoose');
 // mongoose.connect(process.env.DATABASE_URL,{
 //    useNewUrlParser:true,
 //    useUnifiedTopology: true
 // });
-// const db = mongoose.connection;
-// db.on('error', error => console.error(error));
-// db.once('open', () => console.log('connect to db'));
 
 app.use("/", indexRouter);
 app.use("/authors", authorRouter);
@@ -54,8 +50,6 @@ mongoose
   })
   .then(() => {
     app.listen(process.env.PORT || port, () =>
-      console.log(`Running server on port 3000` + port)
+      console.log(`Running server on port ` + port)
     );
   });
-
-//app.listen(process.env.PORT || 3000)
