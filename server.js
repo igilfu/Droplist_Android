@@ -10,7 +10,7 @@ const methodOverride = require("method-override");
 
 const indexRouter = require("./routes/index");
 const authorRouter = require("./routes/authors");
-const bookRouter = require("./routes/books");
+const postRouter = require("./routes/posts");
 
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
@@ -20,27 +20,12 @@ app.use(methodOverride("_method"));
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ limit: "10mb", extended: false }));
 
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,OPTIONS");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Content-Type, Authorization, Content-Length, X-Requested-With"
-  );
-  next();
-});
-
-// mongoose.connect(process.env.DATABASE_URL,{
-//    useNewUrlParser:true,
-//    useUnifiedTopology: true
-// });
-
 app.use("/", indexRouter);
 app.use("/authors", authorRouter);
-app.use("/books", bookRouter);
+app.use("/posts", postRouter);
 
 port = 3000;
-DBname = "gilad";
+DBname = "brary";
 
 const mongoose = require("mongoose");
 mongoose

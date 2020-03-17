@@ -1,15 +1,20 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const Book = require('../models/book')
+const Post = require("../models/post");
 
-router.get('/', async (req,res) =>{
-   let books ;
-   try {
-      books = await Book.find().sort({createdAt: 'desc'}).limit(10).exec();
-   } catch (error) {
-      books = [];
-   }
-   res.render('index', {books: books}); 
+router.get("/", async (req, res) => {
+  let posts;
+  try {
+    posts = await Post.find()
+      .sort({ createdAt: "desc" })
+      .limit(10)
+      .exec();
+  } catch (error) {
+    posts = [];
+  }
+  console.log(posts);
+
+  res.render("index", { posts: posts });
 });
 
-module.exports=router;
+module.exports = router;
