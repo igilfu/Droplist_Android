@@ -29,7 +29,7 @@ DBname = "brary";
 
 const mongoose = require("mongoose");
 mongoose
-  .connect(process.env.MONGODB_URI || `mongodb://localhost/${DBname}`, {
+  .connect(process.env.MONGODB || `mongodb://localhost/${DBname}`, {
     useUnifiedTopology: true,
     useNewUrlParser: true
   })
